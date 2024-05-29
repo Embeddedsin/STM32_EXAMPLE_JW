@@ -1,0 +1,20 @@
+08:42:18 **** Incremental Build of configuration Debug for project UART_printf ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "UART_printf.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\jwthe\STM32CubeIDE\BookSTM32\UART_printf\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_printf.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_printf.elf
+ 
+arm-none-eabi-objdump -h -S  UART_printf.elf  > "UART_printf.list"
+arm-none-eabi-objcopy  -O binary  UART_printf.elf  "UART_printf.bin"
+arm-none-eabi-size   UART_printf.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8776	    120	   1656	  10552	   2938	UART_printf.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_printf.bin
+ 
+Finished building: UART_printf.list
+ 
+
+08:42:21 Build Finished. 0 errors, 0 warnings. (took 3s.614ms)
+
